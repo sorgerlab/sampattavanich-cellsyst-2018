@@ -1,2 +1,50 @@
 # Sampattavanich et al., Cell Systems (2018)
-Source code for the article "Encoding growth factor identity in the temporal dynamics of a transcription factor under combinatorial regulation".
+
+**Source code and example plots for the article "Encoding growth factor
+identity in the temporal dynamics of a transcription factor under
+combinatorial regulation" by Sampattavanich et al.**
+
+Each piece of source code is provided in a folder containing matlab
+scripts and all related functions. The main function to generate related
+figures are highlighted in **bold** in the following table. Readme file
+can also be seen in the accompanied PDF file, also showing example
+plots. To run this code, users must download related source files and
+put these in the \\rawdata folder placed at the top-most level of this
+git repository folder.
+
+
+<table>
+<thead>
+<tr class="header">
+<th>Figures</th>
+<th>Related files</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fig.1B</td>
+<td><p><strong>createParentalVSReporter.m</strong></p>
+<p>genFoxO3.m</p>
+<p>plotParentalVSReporter.m</p>
+<p>errorbarxy.m by Qi An (matlabcentral)</p>
+<p>createParentalVSReporter-readme.pdf</p>
+<p>Rawdata/combineddata06012014.mat (<strong>download</strong>)</p>
+<p>analysisPipe06012014-parental-withBG.cpproj</p>
+<p>analysisPipe06012014-reporter-withBG.cpproj</p></td>
+</tr>
+<tr class="even">
+<td>Fig.S1B and S1C</td>
+<td><p><strong>Comparedataat15min.m</strong></p>
+<p>Comparedataat15min-readme.pdf</p>
+<p>Rawdata/combineddata06012014.mat (<strong>download</strong>)</p>
+<p>Rawdata/analysisPipe06012014-parental-withBG.cpproj</p>
+<p>Rawdata/analysisPipe06012014-reporter-withBG.cpproj</p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
