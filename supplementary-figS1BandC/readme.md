@@ -1,4 +1,4 @@
-**Comparedataat15min.m, relates to supplementary Fig.S1B and S1C**
+﻿**Comparedataat15min.m, relates to supplementary Fig.S1B and S1C**
 
 Required input file: combineddata06012014.mat
 
@@ -13,13 +13,7 @@ Cell Profiler (Ver:2.1.1) code for image segmentation and data
 extraction
 
 -   Rawdata/analysisPipe06012014-parental-withBG.cpproj
-
 -   Rawdata/analysisPipe06012014-reporter-withBG.cpproj
-
-Plate map:
-
-![](media/image1.emf){width="6.268055555555556in"
-height="4.0580905511811025in"}
 
 Contains: 2 struct variables: parental and reporter
 
@@ -38,10 +32,9 @@ Contains: 2 struct variables: parental and reporter
 |                                   |                                   |
 | Time120: {8×12 cell}              | Time120: {8×12 cell}              |
 +===================================+===================================+
-| Dimensions of each field follow   |
-| the platemap above.               |
+| Dimensions of each field follow the platemap above.                   |
 +-----------------------------------+-----------------------------------+
-| Common data fields                |
+|                            Common data fields                         |
 +-----------------------------------+-----------------------------------+
 | \'nuc\_area\'                     | \'extendedcyto\_area\'            |
 |                                   |                                   |
@@ -74,14 +67,3 @@ Contains: 2 struct variables: parental and reporter
 | \'log10CoverN\_4pixel\'           |                                   |
 +-----------------------------------+-----------------------------------+
 
-**Output figures**
-
-Fig.S1B
-
-![](media/image2.emf){width="6.268055555555556in"
-height="3.2951476377952758in"}
-
-Fig.S1C
-
-![](media/image3.emf){width="6.265733814523185in"
-height="3.210191382327209in"}
