@@ -5,7 +5,7 @@ Required input file: combineddata06012014.mat
 Cell lines: parental 184A1 and 184A1 with F3aN400 sensor
 
 Treatment Condition: Cells were serum starved for 6 hours, then treated
-with combination of drugs and ligands for 0, 15, 45, 90, 135 minutes.
+with combination of drugs and ligands for 0, 15, 45, 90, 120 minutes.
 Parental 184A1 cells were immunostained with FoxO3 antibody. Reporter
 184A1 cells with F3aN400 sensor were fixed and imaged.
 
