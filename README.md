@@ -8,10 +8,12 @@ Each piece of source code is provided in a folder containing matlab
 scripts and all related functions. The main function to generate related
 figures are highlighted in **bold** in the following table. Readme file
 can also be seen in the accompanied PDF file, also showing example
-plots. To run this code, users must download related source files and
-put these in the \\rawdata folder placed at the top-most level of this
-git repository folder.
+plots. CellProfiler project files (.cpproj) are also provided for users
+who are interested to see our pipelines for image segmentation.
 
+To run this code, users must download related source files and put these
+in the \\rawdata folder placed at the top-most level of this git
+repository folder.
 
 <table>
 <thead>
@@ -40,11 +42,5 @@ git repository folder.
 <p>Rawdata/analysisPipe06012014-parental-withBG.cpproj</p>
 <p>Rawdata/analysisPipe06012014-reporter-withBG.cpproj</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
-
-
