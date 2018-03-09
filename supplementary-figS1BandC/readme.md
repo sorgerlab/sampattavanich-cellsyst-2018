@@ -12,58 +12,41 @@ Parental 184A1 cells were immunostained with FoxO3 antibody. Reporter
 Cell Profiler (Ver:2.1.1) code for image segmentation and data
 extraction
 
--   Rawdata/analysisPipe06012014-parental-withBG.cpproj
--   Rawdata/analysisPipe06012014-reporter-withBG.cpproj
+  - Rawdata/analysisPipe06012014-parental-withBG.cpproj
 
-Contains: 2 struct variables: parental and reporter
+  - Rawdata/analysisPipe06012014-reporter-withBG.cpproj
 
-+-----------------------------------+-----------------------------------+
-| reporter =                        | parental =                        |
-|                                   |                                   |
-| struct with fields:               | struct with fields:               |
-|                                   |                                   |
-| Time0: {8×12 cell}                | Time0: {8×12 cell}                |
-|                                   |                                   |
-| Time15: {8×12 cell}               | Time15: {8×12 cell}               |
-|                                   |                                   |
-| Time45: {8×12 cell}               | Time45: {8×12 cell}               |
-|                                   |                                   |
-| Time90: {8×12 cell}               | Time90: {8×12 cell}               |
-|                                   |                                   |
-| Time120: {8×12 cell}              | Time120: {8×12 cell}              |
-+===================================+===================================+
-| Dimensions of each field follow the platemap above.                   |
-+-----------------------------------+-----------------------------------+
-|                            Common data fields                         |
-+-----------------------------------+-----------------------------------+
-| \'nuc\_area\'                     | \'extendedcyto\_area\'            |
-|                                   |                                   |
-| \'nuc\_coordX\'                   | \'extendedcyto\_integratedDAPI\'  |
-|                                   |                                   |
-| \'nuc\_coordY\'                   | \'extendedcyto\_integratedFoxO3\' |
-|                                   |                                   |
-| \'nuc\_formfactor\'               | \'extendedcyto\_integratedECDGree |
-|                                   | n\'                               |
-| \'nuc\_integratedDAPI\'           |                                   |
-|                                   | \'extendedcyto\_meanDAPI\'        |
-| \'nuc\_integratedFoxO3\'          |                                   |
-|                                   | \'extendedcyto\_meanFoxO3\'       |
-| \'nuc\_integratedWCDGreen\'       |                                   |
-|                                   | \'extendedcyto\_meanWCDGreen\'    |
-| \'nuc\_meanDAPI\'                 |                                   |
-|                                   | \'smallcyto\_area\'               |
-| \'nuc\_meanFoxO3\'                |                                   |
-|                                   | \'smallcyto\_integratedDAPI\'     |
-| \'nuc\_meanWCDGreen\'             |                                   |
-|                                   | \'smallcyto\_integratedFoxO3\'    |
-| \'nuc\_normmeanFoxO3\'            |                                   |
-|                                   | \'smallcyto\_integratedWCDGreen\' |
-| \'log10CoverN\_extended\_norm\'   |                                   |
-|                                   | \'smallcyto\_meanDAPI\'           |
-| \'log10CoverN\_extended\'         |                                   |
-|                                   | \'smallcyto\_meanFoxO3\'          |
-| \'log10CoverN\_4pixel\_norm\'     |                                   |
-|                                   | \'smallcyto\_meanWCDGreen\'       |
-| \'log10CoverN\_4pixel\'           |                                   |
-+-----------------------------------+-----------------------------------+
+Plate map:
 
+![](media/image1.png)
+
+**Each struct timepoint variable contains 8x12 cells following the above
+platemap**
+
+Time0: {8×12 cell};Time15: {8×12 cell};Time45: {8×12 cell};Time90: {8×12
+cell};Time120: {8×12 cell}
+
+**Each cell contains the following data fields:**
+
+'nuc\_area' 'nuc\_coordX' 'nuc\_coordY' 'nuc\_formfactor'
+'nuc\_integratedDAPI' 'nuc\_integratedFoxO3' 'nuc\_integratedWCDGreen'
+'nuc\_meanDAPI' 'nuc\_meanFoxO3' 'nuc\_meanWCDGreen'
+'nuc\_normmeanFoxO3' 'log10CoverN\_extended\_norm'
+'log10CoverN\_extended' 'log10CoverN\_4pixel\_norm'
+'log10CoverN\_4pixel' 'extendedcyto\_area'
+'extendedcyto\_integratedDAPI' 'extendedcyto\_integratedFoxO3'
+'extendedcyto\_integratedECDGreen' 'extendedcyto\_meanDAPI'
+'extendedcyto\_meanFoxO3' 'extendedcyto\_meanWCDGreen' 'smallcyto\_area'
+'smallcyto\_integratedDAPI' 'smallcyto\_integratedFoxO3'
+'smallcyto\_integratedWCDGreen' 'smallcyto\_meanDAPI'
+'smallcyto\_meanFoxO3' 'smallcyto\_meanWCDGreen'
+
+**Output figures**
+
+Fig.S1B
+
+![](media/image2.png)
+
+Fig.S1C
+
+![](media/image3.png)
