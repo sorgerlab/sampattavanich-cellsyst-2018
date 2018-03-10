@@ -31,6 +31,6 @@ repository folder.
 |                     | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
 |                     | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
 | Figure 7C, S7A, S7B | `plot_inhib_effect.m`                                 |
-|                     | Rawdata/fixedcell/*.* (download)                      |
+|                     | Rawdata/fixedcell/\*.\* (download)                    |
 | Figure 7D, S7E, S7F | `run_sensitivity.m`                                   |
-|                     | Rawdata/fixedcell/*.* (download)                      |
+|                     | Rawdata/fixedcell/\*.\* (download)                    |
