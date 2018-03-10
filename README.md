@@ -15,22 +15,24 @@ To run this code, users must download related source files and put these
 in the \\rawdata folder placed at the top-most level of this git
 repository folder.
 
-| Figures             | Related files                                         |
-|---------------------|-------------------------------------------------------|
-| Fig.1B              | `createParentalVSReporter.m`                          |
-|                     | `genFoxO3.m`                                          |
-|                     | `plotParentalVSReporter.m`                            |
-|                     | `errorbarxy.m` by Qi An (matlabcentral)               |
-|                     | `createParentalVSReporter-readme.pdf`                 |
-|                     | Rawdata/`combineddata06012014.mat` (download)         |
-|                     | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
-|                     | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
-| Fig.S1B and S1C     | `comparedataat15min.m`                                |
-|                     | `Comparedataat15min-readme.pdf`                       |
-|                     | Rawdata/`combineddata06012014.mat` (download)         |
-|                     | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
-|                     | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
-| Figure 7C, S7A, S7B | `plot_inhib_effect.m`                                 |
-|                     | Rawdata/fixedcell/\*.\* (download)                    |
-| Figure 7D, S7E, S7F | `run_sensitivity.m`                                   |
-|                     | Rawdata/fixedcell/\*.\* (download)                    |
+| Figures           | Related files                                         |
+|-------------------|-------------------------------------------------------|
+| Fig.1B            | `createParentalVSReporter.m`                          |
+|                   | `genFoxO3.m`                                          |
+|                   | `plotParentalVSReporter.m`                            |
+|                   | `errorbarxy.m` by Qi An (matlabcentral)               |
+|                   | `createParentalVSReporter-readme.pdf`                 |
+|                   | Rawdata/`combineddata06012014.mat` (download)         |
+|                   | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
+|                   | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
+| Fig.S1B and S1C   | `comparedataat15min.m`                                |
+|                   | `Comparedataat15min-readme.pdf`                       |
+|                   | Rawdata/`combineddata06012014.mat` (download)         |
+|                   | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
+|                   | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
+| Fig.7B            | ‘analysis_median_iqr_rotation.m’                      |
+|                   | Rawdata/fixedcell/\*.\* (download)                    |
+| Fig. 7C, S7A, S7B | `plot_inhib_effect.m`                                 |
+|                   | Rawdata/fixedcell/\*.\* (download)                    |
+| Fig. 7D, S7E, S7F | `run_sensitivity.m`                                   |
+|                   | Rawdata/fixedcell/\*.\* (download)                    |
