@@ -11,7 +11,7 @@ can also be seen in the accompanied PDF file, also showing example
 plots. CellProfiler project files (`.cpproj`) are also provided for users
 who are interested to see our pipelines for image segmentation.
 
-To run this code, users must download related raw data from 10.6084/m9.figshare.c.4026994
+To run this code, users must download related raw data from DOI:10.6084/m9.figshare.c.4026994
 and put these in the \\rawdata folder placed at the top-most level of this git
 repository folder.
 
