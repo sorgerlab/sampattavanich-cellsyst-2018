@@ -1,4 +1,4 @@
-**Sampattavanich et al., Cell Systems (2018)**
+# Sampattavanich et al., Cell Systems (2018)
 
 **Source code and example plots for the article "Encoding growth factor
 identity in the temporal dynamics of a transcription factor under
