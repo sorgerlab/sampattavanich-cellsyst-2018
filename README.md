@@ -30,7 +30,10 @@ repository folder.
 |                   | Rawdata/`combineddata06012014.mat` (download)         |
 |                   | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
 |                   | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
-| Fig.7B            | ‘analysis_median_iqr_rotation.m’ (Main code)          |
+| Fig.6B            | `plot_exampleEKAREVvsF3aN400.m` (Main code)           |
+|                   | `calculate_correlation.m` (Main code)                 |
+|                   | Rawdata/dualsensors/\*.\* (download)                  |
+| Fig.7B            | `analysis_median_iqr_rotation.m` (Main code)          |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
 | Fig. 7C, S7A, S7B | `plot_inhib_effect.m` (Main code)                     |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
