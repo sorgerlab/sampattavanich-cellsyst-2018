@@ -17,7 +17,7 @@ repository folder.
 
 | Figures           | Related files                                         |
 |-------------------|-------------------------------------------------------|
-| Fig.1B            | `createParentalVSReporter.m`                          |
+| Fig.1B            | `createParentalVSReporter.m` (Main code)              |
 |                   | `genFoxO3.m`                                          |
 |                   | `plotParentalVSReporter.m`                            |
 |                   | `errorbarxy.m` by Qi An (matlabcentral)               |
@@ -25,14 +25,14 @@ repository folder.
 |                   | Rawdata/`combineddata06012014.mat` (download)         |
 |                   | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
 |                   | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
-| Fig.S1B and S1C   | `comparedataat15min.m`                                |
+| Fig.S1B and S1C   | `comparedataat15min.m` (Main code)                    |
 |                   | `Comparedataat15min-readme.pdf`                       |
 |                   | Rawdata/`combineddata06012014.mat` (download)         |
 |                   | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
 |                   | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
-| Fig.7B            | `analysis_median_iqr_rotation.m`                      |
+| Fig.7B            | ‘analysis_median_iqr_rotation.m’ (Main code)          |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
-| Fig. 7C, S7A, S7B | `plot_inhib_effect.m`                                 |
+| Fig. 7C, S7A, S7B | `plot_inhib_effect.m` (Main code)                     |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
-| Fig. 7D, S7E, S7F | `run_sensitivity.m`                                   |
+| Fig. 7D, S7E, S7F | `run_sensitivity.m` (Main code)                       |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
