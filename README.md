@@ -25,22 +25,22 @@ repository folder.
 <tbody>
 <tr class="odd">
 <td>Fig.1B</td>
-<td><p><strong>'createParentalVSReporter.m'</strong></p>
-<p>'genFoxO3.m'</p>
-<p>'plotParentalVSReporter.m'</p>
-<p>'errorbarxy.m' by Qi An (matlabcentral)</p>
-<p>'createParentalVSReporter-readme.pdf'</p>
-<p>'Rawdata/combineddata06012014.mat' (<strong>download</strong>)</p>
-<p>'analysisPipe06012014-parental-withBG.cpproj'</p>
-<p>'analysisPipe06012014-reporter-withBG.cpproj'</p></td>
+<td><p><strong>createParentalVSReporter.m</strong></p>
+<p>genFoxO3.m</p>
+<p>plotParentalVSReporter.m</p>
+<p>errorbarxy.m by Qi An (matlabcentral)</p>
+<p>createParentalVSReporter-readme.pdf</p>
+<p>Rawdata/combineddata06012014.mat (<strong>download</strong>)</p>
+<p>analysisPipe06012014-parental-withBG.cpproj</p>
+<p>analysisPipe06012014-reporter-withBG.cpproj</p></td>
 </tr>
 <tr class="even">
 <td>Fig.S1B and S1C</td>
-<td><p><strong>'Comparedataat15min.m'</strong></p>
-<p>'Comparedataat15min-readme.pdf'</p>
-<p>'Rawdata/combineddata06012014.mat' (<strong>download</strong>)</p>
-<p>'Rawdata/analysisPipe06012014-parental-withBG.cpproj'</p>
-<p>'Rawdata/analysisPipe06012014-reporter-withBG.cpproj'</p></td>
+<td><p><strong>Comparedataat15min.m</strong></p>
+<p>Comparedataat15min-readme.pdf</p>
+<p>Rawdata/combineddata06012014.mat (<strong>download</strong>)</p>
+<p>Rawdata/analysisPipe06012014-parental-withBG.cpproj</p>
+<p>Rawdata/analysisPipe06012014-reporter-withBG.cpproj</p></td>
 </tr>
 </tbody>
 </table>
