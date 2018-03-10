@@ -1,4 +1,4 @@
-# Sampattavanich et al., Cell Systems (2018)
+**Sampattavanich et al., Cell Systems (2018)**
 
 **Source code and example plots for the article "Encoding growth factor
 identity in the temporal dynamics of a transcription factor under
@@ -8,7 +8,7 @@ Each piece of source code is provided in a folder containing matlab
 scripts and all related functions. The main function to generate related
 figures are highlighted in **bold** in the following table. Readme file
 can also be seen in the accompanied PDF file, also showing example
-plots. CellProfiler project files (.cpproj) are also provided for users
+plots. CellProfiler project files (`.cpproj`) are also provided for users
 who are interested to see our pipelines for image segmentation.
 
 To run this code, users must download related source files and put these
