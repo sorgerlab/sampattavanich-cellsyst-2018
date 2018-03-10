@@ -30,7 +30,7 @@ repository folder.
 |                   | Rawdata/`combineddata06012014.mat` (download)         |
 |                   | Rawdata/`analysisPipe06012014-parental-withBG.cpproj` |
 |                   | Rawdata/`analysisPipe06012014-reporter-withBG.cpproj` |
-| Fig.7B            | ‘analysis_median_iqr_rotation.m’                      |
+| Fig.7B            | `analysis_median_iqr_rotation.m`                      |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
 | Fig. 7C, S7A, S7B | `plot_inhib_effect.m`                                 |
 |                   | Rawdata/fixedcell/\*.\* (download)                    |
