@@ -16,6 +16,7 @@
 *.mat
 *.asv
 *.0*
+*.h5
 # OS generated files #
 ######################
 .DS_Store
