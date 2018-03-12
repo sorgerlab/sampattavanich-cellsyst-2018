@@ -4,25 +4,25 @@
 identity in the temporal dynamics of a transcription factor under
 combinatorial regulation" by Sampattavanich et al.**
 
-Each piece of source code is provided in a folder containing matlab
+Each piece of source code is provided in a folder containing matlab or python
 scripts and all related functions. The main function to generate related
-figures are highlighted in **bold** in the following table. Readme file
-can also be seen in the accompanied PDF file, also showing example
-plots. CellProfiler project files (`.cpproj`) are also provided for users
-who are interested to see our pipelines for image segmentation.
+figures are highlighted in **bold**. 
 
 To run this code, users must download related raw data from DOI:10.6084/m9.figshare.c.4026994
 and put these in the \\rawdata folder placed at the top-most level of this git
 repository folder.
 
-| Figures             | Related files                                                                                                                                                        |
-|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       Figures       |                                                                             Related files                                                                            |
+|:-------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | Fig.1B              | Fig1B/`createParentalVSReporter.m` (Main script)                                                                                                                     |
 |                     | Rawdata/parentalVSReporter/\*.\* (download)                                                                                                                          |
 | Fig.S1B and S1C     | FigS1BC/`comparedataat15min.m` (Main script)                                                                                                                         |
 |                     | Rawdata/parentalVSReporter/\*.\* (download)                                                                                                                          |
 | Fig.1C and S1G      | Fig1C/`fig1CS1G.m` (Main script)                                                                                                                                     |
 |                     | Rawdata/western/\*.\* (download)                                                                                                                                     |
+| Fig.S1E             | FigS1E/`pulsing_vs_iqr.py` (Main script)                                                                                                                             |
+|                     | Rawdata/Workspaces/`130722_SCdyn.csv` (download)                                                                                                                     |
+|                     | Rawdata/Workspaces/`130722_Pav.csv` (download)                                                                                                                       |
 | Fig.1D and 2A&B     | Fig1D-2AB/`fig1D.m` (Main script)                                                                                                                                    |
 |                     | Fig1D-2AB/`fig2A.m` (Main script)                                                                                                                                    |
 |                     | Fig1D-2AB/`fig2B.m` (Main script)                                                                                                                                    |
@@ -85,4 +85,4 @@ repository folder.
 | Fig. 7C, S7A, S7B   | Fig7/`plot_inhib_effect.m` (Main script)                                                                                                                             |
 |                     | Rawdata/fixedcell/\*.\* (download)                                                                                                                                   |
 | Fig. 7D, S7E, S7F   | Fig7/`run_sensitivity.m` (Main script)                                                                                                                               |
-|                     | Rawdata/fixedcell/\*.\* (download)                                                                                                                                   |
+|                     | Rawdata/fixedcell/\*.\* (download)                                                                                                                                   |                                                                                                                 |
