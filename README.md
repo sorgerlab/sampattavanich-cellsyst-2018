@@ -12,8 +12,8 @@ To run this code, users must download related raw data from https://doi.org/10.6
 and put these in the \\rawdata folder placed at the top-most level of this git
 repository folder.
 
-|       Figures       |                                                                             Related files                                                                            |
-|:-------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Figures             | Related files                                                                                                                                                        |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Fig.1B              | Fig1B/`createParentalVSReporter.m` (Main script)                                                                                                                     |
 |                     | Rawdata/parentalVSReporter/\*.\* (download)                                                                                                                          |
 | Fig.S1B and S1C     | FigS1BC/`comparedataat15min.m` (Main script)                                                                                                                         |
@@ -85,4 +85,4 @@ repository folder.
 | Fig. 7C, S7A, S7B   | Fig7/`plot_inhib_effect.m` (Main script)                                                                                                                             |
 |                     | Rawdata/fixedcell/\*.\* (download)                                                                                                                                   |
 | Fig. 7D, S7E, S7F   | Fig7/`run_sensitivity.m` (Main script)                                                                                                                               |
-|                     | Rawdata/fixedcell/\*.\* (download)                                                                                                                                   |                                                                                                                 |
+|                     | Rawdata/fixedcell/\*.\* (download)                                                                                                                                   |
