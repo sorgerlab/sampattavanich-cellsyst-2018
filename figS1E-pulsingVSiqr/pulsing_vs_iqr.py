@@ -1,3 +1,15 @@
+"""This script generates plots of pulsing scores from single-cell data
+versus the IQR of the population distribution of the same data.
+
+It can be run in both Python 2 and 3, and requires the following packages
+- numpy
+- pandas
+- matplotlib
+
+The script can be run as "python pulsing_vs_iqr.py" to reproduce both panels
+of Figure S1E.
+"""
+
 import os
 import numpy
 import pickle
@@ -98,8 +110,8 @@ def plot_pulsing_iqr(df, groups, ligand):
     plt.show()
 
 if __name__ == '__main__':
-    single_cell_fname = '../rawdata/130722_SCdyn.csv'
-    pulsing_fname = '../rawdata/130722_Pav.csv'
+    single_cell_fname = '../rawdata/Workspace/130722_SCdyn.csv'
+    pulsing_fname = '../rawdata/Workspace/130722_Pav.csv'
     df_pulse_frac = pandas.DataFrame.from_csv(pulsing_fname, index_col=None)
 
     groups = ['Cell line', 'Ligand', 'Ligand dose [ng/ml]',
