@@ -8,7 +8,7 @@ Each piece of source code is provided in a folder containing matlab or python
 scripts and all related functions. The main function to generate related
 figures are highlighted in **bold**. 
 
-To run this code, users must download related raw data from DOI:10.6084/m9.figshare.c.4026994
+To run this code, users must download related raw data from https://doi.org/10.6084/m9.figshare.c.4026994
 and put these in the \\rawdata folder placed at the top-most level of this git
 repository folder.
 
