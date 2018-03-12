@@ -17,6 +17,8 @@
 *.asv
 *.0*
 *.h5
+*.csv
+*.xls
 # OS generated files #
 ######################
 .DS_Store
