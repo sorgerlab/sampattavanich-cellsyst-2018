@@ -1,8 +1,7 @@
 # Sampattavanich et al., Cell Systems (2018)
 
-**Source code and example plots for the article "Encoding growth factor
-identity in the temporal dynamics of a transcription factor under
-combinatorial regulation" by Sampattavanich et al.**
+**Source code and example plots for the article "Encoding growth factor identity in the temporal 
+dynamics of FoxO3 under combinatorial regulation by ERK and Akt" by Sampattavanich et al., Cell Systems (2018)**
 
 Each piece of source code is provided in a folder containing matlab or python
 scripts and all related functions. The main function to generate related
@@ -10,7 +9,8 @@ figures are highlighted in **bold**.
 
 To run this code, users must download related raw data from https://doi.org/10.6084/m9.figshare.c.4026994
 and put these in the \\rawdata folder placed at the top-most level of this git
-repository folder.
+repository folder. users must also install functional data analysis MATLAB package from 
+http://www.psych.mcgill.ca/misc/fda/downloads/FDAfuns/Matlab/.
 
 | Figures             | Related files                                                                                                                                                        |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
