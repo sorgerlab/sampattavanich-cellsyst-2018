@@ -1,4 +1,6 @@
 % Figure S3C: Mutual information of early PCs and pulsing decision
+
+addpath('./Functions/')
 [parentdir,~,~]=fileparts(pwd);
 load(fullfile(parentdir,'rawdata','Workspaces','mi_boot_binary_newBTC'));
 

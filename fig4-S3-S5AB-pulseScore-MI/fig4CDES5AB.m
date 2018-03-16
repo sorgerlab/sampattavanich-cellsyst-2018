@@ -1,4 +1,4 @@
-% Figures 4CD, S3D, and S5AB: Pulsing analysis
+% Figures 4CDE and S5AB: Pulsing analysis
 close all;
 addpath('./Functions/')
 
@@ -160,7 +160,7 @@ ligand_dose = [100 50 20 10 5 2.5 0];
 
 resort = [2 3 4 1 6 5];
 for ilig2 = 1:6
-    subplot(3,2,ilig2)
+    subplot(2,3,ilig2)
     ilig = resort(ilig2);
     plot(early_sorted(2,:),dists_sorted,'.','Color',[.7 .7 .7])
     hold on
@@ -174,15 +174,15 @@ for ilig2 = 1:6
     for isite = loopind
         s = siteprop(isite);
         mycol = rgb2hsv(colmap(ilig2,:));
-        mycol(3) = find(s.lig_dose == ligand_dose) / length(ligand_dose);
+        mycol(3) = 1 - ( find(s.lig_dose == ligand_dose) / length(ligand_dose) )
         mycol = hsv2rgb(mycol);
         plot(early_sorted(2,celltypes_sorted == isite),dists_sorted(celltypes_sorted == isite),'.','Color',mycol)
         title(sites_labels{ilig})
     end
     plot(get(gca,'XLim'),[thres_trafo thres_trafo],'k--')
-    
     xlabel('Early PC2')
     ylabel('Pulsatory score')
+    set(gca,'XLim',[-0.3,0.3],'YLim',[0 1]);
 end
 
 %
