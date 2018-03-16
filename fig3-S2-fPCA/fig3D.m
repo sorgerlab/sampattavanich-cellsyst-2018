@@ -1,118 +1,99 @@
-% Figure 3D: EGF fPC1-5 combined and pulsing 
+% Figure 3D: Medians of fPC scores
 addpath('./Functions/')
 
-close all
+sites_all = [4:10 17:-1:11 37:-1:31 44:50 57:-1:51 64:70];
+nCelltype = 6;
+possible_doses = [0 2.5 5 10 20 50 100];
+
 [parentdir,~,~]=fileparts(pwd);
-load(fullfile(parentdir,'rawdata','Workspaces','harm_basis_50_to_600'));
+load(fullfile(parentdir,'rawdata','Workspaces','scores_early_5basis_noFGF_newBTC'));
 
-myextension = '130722_corrected_retracked_all_paper_cleaned';
+resort = [4 1 nan 2 3 6 5]; % Relative to platemap
 
-sites_all = 4;
-nsigs = 40;
-
-removeTraces = [4 7 13 18 23];
-sigs = setdiff(1:100,removeTraces);
-sigs = sigs(1:nsigs);
-colmap = jet(length(sigs));
-harmonicsRemoved = [1]; % specify harmonics that shall be removed from signal, e.g. for trend effects
-
-myscores = edge_snr_score_pw_distdur(sites_all,myextension,0,1/120,'harm_basis_130722_corrected_retracked_all_cleaned_late',1);
-[~,sorted_inds] = sort(myscores);
-sorted_inds = sorted_inds(end:-1:1);
-
-xfac = 1;
-yfac = 1;
-fontsize = 24;
-linewidth = 2;
-
-c_signal_single = [];
-scores_single = nan(3,length(sigs));
-
-for icount = 1:length(sites_all)
-    isite = sites_all(icount);
-    [parentdir,~,~]=fileparts(pwd);
-    load(fullfile(parentdir,'rawdata','Workspaces',['site_' num2str(isite) '_' myextension]));
-    c_signal_single = log10(intensity);
-    s = siteprop(isite);
-    legstr{icount} = s.lig_name;
+medians = nan(length(possible_doses),nCelltype,5);
+highdoses = [];
+for isite = sites_all
+    sprop = siteprop(isite);
+    doseind = sprop.lig_dose == possible_doses;
+    if sprop.lig_dose == 100
+        highdoses = [highdoses isite];
+    end
+    
+    medians(doseind,resort(sprop.lig_index),:) = nanmedian(scores_early(:,celltypes == isite),2);
 end
+medians(1,5,:) = nanmean(medians(1,:,:),2);
 
-nsigs = min([nsigs size(c_signal_single,2)]);
-sigs = sigs(1:nsigs);
-colind = 1:nsigs;
+resort = [2 3 4 1 6 5];
+highdoses = highdoses(resort);
 
-c_signal_single(isinf(c_signal_single)) = nan;
-for i = 1:size(c_signal_single,2)
-    if sum(isnan(c_signal_single(:,i))) > length(c_signal_single(:,i))-2
-        c_signal_single(:,i) = 0;
-    end
-    c_signal_single(:,i) = interp1(timestamp(~isnan(c_signal_single(:,i))),c_signal_single(~isnan(c_signal_single(:,i)),i),timestamp);
-    vec = ~isnan(c_signal_single(:,i))';
-    rl = find(vec ~= [vec(2:end), vec(end)+1]);
-    data =  vec(rl);
-    rl(2:end) = rl(2:end) - rl(1:end-1);
-    if ~data(1)
-        c_signal_single(1:rl(1),i) = c_signal_single(rl(1)+1,i);
-    end
-    if ~data(end)
-        c_signal_single(end-rl(end)+1:end,i) = c_signal_single(end-rl(end),i);
-    end
-end
-time_range = getbasisrange(harm_basis);
-range_ind_min = find((timestamp-time_range(1))>0);
-range_ind_min = range_ind_min(1);
-range_ind_max = find((timestamp-time_range(2))<0);
-range_ind_max = range_ind_max(end);
-range_ind = range_ind_min:range_ind_max;
-times_fine_late = linspace(timestamp(range_ind(1)),timestamp(range_ind(end)),201);
-smoothed_additional = smooth_basis(timestamp(range_ind),c_signal_single(range_ind,:),harm_basis);
-harm_eval = eval_basis(harm_basis,timestamp(range_ind));
-harm_eval_fine = eval_basis(harm_basis,times_fine_late);
-fitcoef = getcoef(smoothed_additional);
-
-nharm = size(fitcoef,1);
-remainingHarm = sort(setdiff(1:nharm,harmonicsRemoved));
-data_fpca_repr_fine = fitcoef(remainingHarm,:)'*harm_eval_fine(:,remainingHarm)';
-data_fpca_repr = fitcoef(harmonicsRemoved,:)'*harm_eval(:,harmonicsRemoved)';
-c_signal_single(range_ind,:) = c_signal_single(range_ind,:)-data_fpca_repr';
-data_fpca_repr = fitcoef(remainingHarm,:)'*harm_eval(:,remainingHarm)';
-c_signal_woNharm = c_signal_single(range_ind,:)-data_fpca_repr';
+nrows = 1;
+ncols = 3;
 
 figure
-colmap2 = [];
-for i = 1:250
-    colmap2 = [colmap2; hsv2rgb([0 1-(i-1)/250 1])];
-end
-colmap2 = [colmap2; [1 1 1]];
-for i = 1:250
-    colmap2 = [colmap2; hsv2rgb([2/3 i/250 1])];
-end
-h = heatmap(data_fpca_repr_fine(sorted_inds(sigs),:),[],[],[],'Colormap',colmap2,'UseFigureColormap',false);
-set(get(h,'Parent'),'CLim',[-.015 .015])
-xtickfac = size(data_fpca_repr_fine,2)/(timestamp(range_ind(end))-timestamp(range_ind(1)));
-xticklab = 70:50:600;
-set(gca,'XLim',[0 size(data_fpca_repr_fine,2)]+.5,'XTick',(xticklab-timestamp(range_ind(1)))*xtickfac,'XTickLabel',xticklab-120)
+
+setFigure(gcf,1,.5,12)
+
+subplot(nrows,ncols,1)
+
 hold on
-xtick_new = interp1(str2num(char(get(gca,'XTickLabel'))),get(gca,'XTick'),0);
-plot([xtick_new xtick_new],get(gca,'YLim'),':k');
-xlabel('time [min]')
-ylabel('Localization');
-set(gcf,'Position',[100 100 400 250]);
+icol = 1;
+legh = [];
+colmap = [linspace(0,1,length(highdoses)+1)' ones(length(highdoses)+1,1) ones(length(highdoses)+1,1)*.9];
+colmap = hsv2rgb(colmap(1:end-1,:));
+markers = {'o','s','v','d','^','>'};
+for irow = 1:length(highdoses)
+    plot(0:length(possible_doses)-1,medians(:,irow,icol),markers{irow},'MarkerFaceColor',colmap(irow,:),'MarkerEdgeColor',colmap(irow,:),'MarkerSize',6)
 
-figure
-h2 = heatmap(c_signal_woNharm(:,sorted_inds(sigs))',[],[],[],'Colormap',colmap2,'UseFigureColormap',false);
-set(get(h2,'Parent'),'CLim',[-.015 .015])
-xtickfac = size(c_signal_woNharm,1)/(timestamp(range_ind(end))-timestamp(range_ind(1)));
-xticklab = 70:50:600;
-set(gca,'XLim',[0 size(c_signal_woNharm,1)]+.5,'XTick',(xticklab-timestamp(range_ind(1)))*xtickfac,'XTickLabel',xticklab-120)
+    [axb,s] = polyfit(0:length(possible_doses)-1,medians(1:end,irow,icol)',1);
+    plot(0:length(possible_doses)-1,(0:length(possible_doses)-1)*axb(1) + axb(2),'-','Color',colmap(irow,:),'LineWidth',2);
+end
+title('Harmonic 1')
+set(gca,'XLim',[-.5 length(possible_doses)-.5])
+set(gca,'XTick',0:length(possible_doses)-1,'XTickLabel',possible_doses)
+xlabel('Ligand dose [ng/ml]')
 
-drawnow
-xtick_new = interp1(str2num(char(get(gca,'XTickLabel'))),get(gca,'XTick'),-70,'linear','extrap');
-hold on;plot([xtick_new xtick_new],get(gca,'YLim'),'-k');
-xtick_new = interp1(str2num(char(get(gca,'XTickLabel'))),get(gca,'XTick'),0);
-plot([xtick_new xtick_new],get(gca,'YLim'),':k');
-xtick_new = interp1(str2num(char(get(gca,'XTickLabel'))),get(gca,'XTick'),480);
-plot([xtick_new xtick_new],get(gca,'YLim'),'-k');
-xlabel('time [min]')
-ylabel('Pulsing');
-set(gcf,'Position',[100 100 400 250]);
+
+subplot(nrows,ncols,2)
+hold on
+icol = 2;
+legh = [];
+for irow = 1:length(highdoses)
+    plot(0:length(possible_doses)-1,medians(:,irow,icol),markers{irow},'MarkerFaceColor',colmap(irow,:),'MarkerEdgeColor',colmap(irow,:),'MarkerSize',6)
+
+    [axb,s] = polyfitZero(1:length(possible_doses)-1,medians(2:end,irow,icol)'-mean(medians(1,:,icol)),1);
+    legh = [legh plot(0:length(possible_doses)-1,(0:length(possible_doses)-1)*axb(1) + mean(medians(1,:,icol)),'-','Color',colmap(irow,:),'LineWidth',2)];
+end
+title('Harmonic 2')
+set(gca,'XLim',[-.5 length(possible_doses)-.5])
+set(gca,'XTick',0:length(possible_doses)-1,'XTickLabel',possible_doses)
+xlabel('Ligand dose [ng/ml]')
+
+
+s5 = subplot(nrows,ncols,3);
+hold on
+icol = 3;
+mycolor = lines(nrows);
+legh = [];
+legstr = cell(length(highdoses),1);
+resort2 = [6 2 3 4 5 1];
+for irow = 1:length(highdoses)
+    isite = highdoses(resort2(irow));
+    sprop = siteprop(isite);
+    legstr{isite == highdoses} = sprop.lig_name(1:3);
+    legh(irow) = plot(0:length(possible_doses)-1,medians(:,irow,icol),markers{irow},'MarkerFaceColor',colmap(irow,:),'MarkerEdgeColor',colmap(irow,:),'MarkerSize',6);
+
+    [axb,s] = polyfitZero(1:length(possible_doses)-1,medians(2:end,irow,icol)'-mean(medians(1,:,icol)),1);
+    plot(0:length(possible_doses)-1,(0:length(possible_doses)-1)*axb(1) + mean(medians(1,:,icol)),'-','Color',colmap(irow,:),'LineWidth',2);
+end
+
+h = legend(legh,legstr,'Location','NorthWest');
+ch = get(h,'child');
+for ileg = 1:length(ch)/3
+    ilegch = (ileg-1)*3+2;
+    set(ch(ilegch),'LineStyle','-','LineWidth',2,'Color',colmap(size(colmap,1)-ileg+1,:)); 
+end
+
+title('Harmonic 3')
+set(gca,'XLim',[-.5 length(possible_doses)-.5])
+set(gca,'XTick',0:length(possible_doses)-1,'XTickLabel',possible_doses)
+xlabel('Ligand dose [ng/ml]')
